@@ -1,9 +1,18 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import UserProfile from './components/UserProfile';
+
 function App() {
   return (
-    <div className="p-4">
-      <h1 className="text-3xl font-bold text-center">Welcome to CodeStage</h1>
-      <p className="text-center mt-2 text-zinc-400">Your place for games, videos, and creative studios.</p>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/profile/:username" element={<UserProfile />} />
+        <Route path="/" element={
+          <div className="p-4 text-center">
+            <h1 className="text-3xl font-bold">Welcome to CodeStage</h1>
+          </div>
+        } />
+      </Routes>
+    </Router>
   );
 }
 
